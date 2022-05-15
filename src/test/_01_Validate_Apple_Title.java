@@ -2,6 +2,7 @@ package test;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import utilities.Driver;
 
 import java.util.concurrent.TimeUnit;
 
@@ -12,13 +13,14 @@ public class _01_Validate_Apple_Title {
         1. Go to "https://www.apple.com/"
         2. Validate the title of the page is displayed as "Apple"
          */
+        WebDriver driver = Driver.getDriver(); // method to use instead of below
 
-        System.setProperty("webdriver.chrome.driver", "/Users/deniztaskin/IdeaProjects/selenium_intro/chromedriver");
-        WebDriver driver = new ChromeDriver();
-
-        driver.manage().window().maximize();
-
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+//        System.setProperty("webdriver.chrome.driver", "/Users/deniztaskin/IdeaProjects/selenium_intro/chromedriver");
+//        WebDriver driver = new ChromeDriver();
+//
+//        driver.manage().window().maximize();
+//
+//        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
         driver.get("https://www.apple.com/");
 
@@ -28,6 +30,7 @@ public class _01_Validate_Apple_Title {
         }else System.out.println("Apple title verification FAILED!!!");
 
         driver.quit();
+//        Driver.quitDriver();
 
     }
 }
