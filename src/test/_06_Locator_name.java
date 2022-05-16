@@ -17,9 +17,9 @@ public class _06_Locator_name {
 
         driver.get("https://www.google.com");
 
-        WebElement inputBox = driver.findElement(By.name("q"));
+//        WebElement inputBox = driver.findElement(By.name("q")); WRITTEN DOWN ON THE CODE
 
-        if(inputBox.isDisplayed()) System.out.println("The inputBox validations is PASSED");
+        if(driver.findElement(By.name("q")).isDisplayed()) System.out.println("The inputBox validations is PASSED");
         else System.out.println("The inputBox validations is FAILED");
 
         Driver.quitDriver();
